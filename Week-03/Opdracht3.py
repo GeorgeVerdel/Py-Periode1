@@ -3,8 +3,11 @@
 # Gebruik daarna een for-loop om ieder boek 1 voor 1 uit te printen
 
 
+boekenlijst = ["boek1", "boek2", "boek3", "boek4", "boek5"]
 
-
+for boek in boekenlijst:
+    print(boek)
+    
 
 # Oefening 2
 # Maak een list aan genaamd games met minimaal 5 games
@@ -12,9 +15,10 @@
 # Print bij iedere game de zin: "Ik speel graag ..."
 # Bijvoorbeeld: "Ik speel graag Minecraft"
 
+games = ["Warzone", "Roblox", "BLack Ops 3", "Black Ops 2", "GTA"]
 
-
-
+for game in games:
+    print(f"Ik speel graag {game}")
 
 # Oefening 3
 # Maak een list aan genaamd scores met de volgende waardes:
@@ -23,16 +27,18 @@
 # Tel bij iedere score 10 punten op en print daarna de nieuwe score uit
 
 
+scores = [10, 25, 40, 15, 30]
 
+for score in scores:
+    print(f"{score + 10}")
 
 
 # Oefening 4
 # Gebruik een for-loop met range() om de getallen 1 tot en met 10 uit te printen
 # Zorg ervoor dat zowel 1 als 10 geprint worden
 
-
-
-
+for i in range(11):
+    print(i)
 
 # Oefening 5
 # Gebruik een for-loop met range() om de tafel van 5 uit te printen
@@ -42,9 +48,8 @@
 # 3 x 5 = 15
 # Ga door tot en met 10 x 5
 
-
-
-
+for v in range(11):
+    print(f"{v} x 5 = {v * 5}")
 
 # Oefening 6
 # Maak een variabel countdown aan met de waarde 10
@@ -54,9 +59,9 @@
 
 countdown = 10
 
-
-
-
+while countdown > 0:
+    print(countdown)
+    countdown -= 1
 
 # Oefening 7
 # Maak de volgende variabelen aan:
@@ -70,7 +75,11 @@ countdown = 10
 monsterHealth = 100
 damage = 20
 
-
+while monsterHealth > 0:
+    print(monsterHealth)
+    monsterHealth -= damage
+    if monsterHealth <= 0:
+        print("Monster verslagen!")
 
 
 
@@ -82,3 +91,16 @@ damage = 20
 # Als het item "Potion" is, print dan "Deze potion geeft health terug"
 # Als het item "Key" is, print dan "Met deze key kun je een deur openen"
 # Bonus! Maak een variabel itemCount aan en tel hoeveel items er in de inventory zitten
+
+inventory = ["Sword", "Potion", "Shield", "Bow", "Key"]
+itemcount = 0
+
+for item in inventory:
+    itemcount += 1
+    if item == "Potion":
+        print(f"Item: {item}. Deze potion geeft health terug")
+    elif item == "Key":
+        print(f"Item: {item}. Met deze key kun je een deur openen")
+    else:
+        print(f"Item: {item}")
+print(f"Totaal aantal items: {itemcount}")
