@@ -15,6 +15,11 @@
 # Gebruik voor alle variabelen de juiste Python naming conventions!
 # Bijvoorbeeld: player_name in plaats van playerName.
 
+# Stats van de player
+player_name = "George"
+player_weapon = "Sword"
+player_damage = 0
+enemy_health = 100
 
 # Stap 2 - Match Case
 # Gebruik een match case om te controleren welk wapen de speler heeft.
@@ -46,6 +51,32 @@
 # TIP:
 # Gebruik case _ voor een onbekende waarde.
 
+# Checked welk wapen wordt gebruikt 
+match player_weapon:
+    case "Sword":
+        player_damage = 20
+        print("Je gebruikt een zwaard!")
+    case "Katana":
+        player_damage = 35
+        print("Je gebruikt een Katana!")
+    case "Dagger":
+        player_damage = 15
+        print("Je gebruikt een Dagger!")
+    case "LongSword":
+        player_damage = 40
+        print("Je gebruikt een Lang Zwaard!")
+    case "Bow":
+        player_damage = 15
+        print("Je gebruikt een boog!")
+    case "Staff":
+        player_damage = 25
+        print("Je gebruikt een magische staf!")
+    case "Axe":
+        player_damage = 30
+        print("Je gebruikt een bijl!")
+    case _: # Dit zorgt ervoor als je een wapen hebt wat er niet is dat je damage 0 is en Onbekend wapen wordt geprint
+        player_damage = 0
+        print("Onbekend wapen!")
 
 # Stap 3 - Resultaat printen
 # Print na de match case de volgende informatie:
@@ -56,6 +87,11 @@
 #
 # Zorg ervoor dat de informatie uit je variabelen komt.
 
+
+# Player Stats uitprinten
+print(f"Speler: {player_name}")
+print(f"Wapen: {player_weapon}")
+print(f"Damage: {player_damage}")
 
 # Stap 4 - Comments
 # Voeg minimaal 3 eigen comments toe aan je programma.
@@ -68,6 +104,7 @@
 # Schrijf duidelijke comments die iemand anders helpen
 # om jouw code te begrijpen.
 
+# .
 
 # Stap 5 - Naming Conventions
 # Controleer of je code voldoet aan de Python naming conventions.
@@ -98,9 +135,19 @@
 # Print na iedere aanval hoeveel health de vijand nog heeft.
 # Zorg ervoor dat de health niet onder de 0 komt.
 
+if enemy_health > 0:
+    for i in range(3):
+        enemy_health -= player_damage
+        print(f"De vijand zijn health is: {enemy_health}")
 
 # BONUS 3
 # Gebruik een while-loop om de vijand aan te vallen
 # totdat de vijand geen health meer heeft.
 #
 # Print daarna "Vijand verslagen!"
+
+while enemy_health > 0:
+    enemy_health -= player_damage
+    print(f"De vijand zijn health is: {enemy_health}")
+if enemy_health == 0:
+    print("Vijand verslagen!")
